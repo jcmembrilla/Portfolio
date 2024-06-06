@@ -1,0 +1,62 @@
+---
+import CSSIcon from "./icons/CSSIcon.astro";
+import JSIcon from "./icons/JSIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+
+const TAGS = {
+    JS: {
+        name: "Java Script",
+        class: "bg-[#ebe939]",
+        icon: JSIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#80BFFF]",
+        icon: CSSIcon,
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#FF8000]",
+        icon: HTMLIcon,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Apliacion para escuchar radios",
+        description: "Una seleccion de radios de argentina",
+        link: "https://radiosarg.netlify.app/",
+        github: "https://github.com/jcmembrilla/radios-argentinas",
+        image: "/projects/radiosArgentinas.jpg",
+        tags: [TAGS.JS, TAGS.CSS, TAGS.HTML],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image, link }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-blue-200">{title}</h3>
+            <p class="text-ls mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-md text-bold text-pretty text-white ${tag.class} py-1 px-2 mt-3`}
+                        >
+                            <tag.icon class="size-6" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+                <img
+                    src={image}
+                    alt={`Captura del proyecto ${image}`}
+                    class="rounded sahadow-2xl shadow-white/15 mt-4"
+                />
+            </a>
+        </article>
+    ))
+}

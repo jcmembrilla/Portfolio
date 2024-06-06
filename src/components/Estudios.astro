@@ -1,0 +1,28 @@
+---
+import EstudiosItems from "./EstudiosItems.astro";
+
+const ESTUDIOS = [
+    {
+        date: "2020-2023",
+        title: "Tecnicatura superior en análisis de sistemas",
+        description: "Instituto superior de formación docente y técnia N°87",
+        image: "/images/titulo-analista.jpg",
+    },
+    {
+        date: "2021-2023",
+        title: "Desarrollo Web Full Stack",
+        description: "CEUTyC",
+        image: "/images/certificado.png",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3 mt-4">
+    {
+        ESTUDIOS.map((estudio) => (
+            <li class="mb-10 ms-4">
+                <EstudiosItems {...estudio} />
+            </li>
+        ))
+    }
+</ol>

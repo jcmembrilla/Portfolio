@@ -1,0 +1,91 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+
+import SectionContainer from "../components/SectionContainer.astro";
+
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import BrieCaseIcon from "../components/icons/BrieCaseIcon.astro";
+import Estudios from "../components/Estudios.astro";
+---
+
+<Layout
+	title="Portfolio de Juan Cruz Membrilla"
+	description="Portfolio de Juan Cruz Membrilla - Desarrollador y programador web"
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-24">
+			<img
+				class="rounded-full size-20 mb-4"
+				src="/fotoPerfil.jpg"
+				alt="photo"
+			/>
+			<div>
+				<h1
+					class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-4-x pb-6 lg:pb-10"
+				>
+					Hola! Soy Juan Cruz <a
+						href="https://linkedin.com/in/membrilla-juan-cruz-065019175/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center ml-2 mt-2"
+					>
+						<Badge>Disponible</Badge>
+					</a>
+				</h1>
+			</div>
+
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				Desarrollador web: Ayacucho, Bs. As. Argentina
+			</h2>
+			<h3 class="opacity-80 text-wrap max-w-[700px]">
+				Me encuentro en la busqueda de mi primera experiencia laboral,
+				como desarrodor web.
+			</h3>
+			<nav class="flex gap-4 mt-4 flex-wrap">
+				<SocialPill
+					href="https://linkedin.com/in/membrilla-juan-cruz-065019175/"
+				>
+					LinkedIn
+					<LinkedIn class="size-4 md:size-6" />
+				</SocialPill>
+				<SocialPill href="mailto:membrillajc@gmail.com">
+					GitHub
+					<GitHub class="size-4 md:size-6" />
+				</SocialPill>
+				<SocialPill>
+					membrillajc@gmail.com
+					<MailIcon class="size-4 md:size-6" />
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="estudios">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<ExperienceIcon class="size-7" />Estudios
+			</h2>
+			<Estudios />
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<BrieCaseIcon class="size-7" />Experiencia
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<CodeIcon class="size-7" />Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>

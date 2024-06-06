@@ -1,0 +1,39 @@
+---
+import ExperienceItems from "./ExperienceItems.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Actualidad",
+        title: "Docente",
+        description:
+            "Actualmente me encuentro dictando clases en mi localidad, en las materias que mi titulo me habilita.",
+    },
+    {
+        date: "2020-2022",
+        title: "Tecnico en redes - SintelNet",
+        description:
+            "En es esta empresa proveedora de internet me desempeñe como técnico de redes realizando visitas técnicas a los domicilios de los clientes para solucionar diferente tipo de problemas que puedan llegar a tener con el servicio.",
+    },
+    {
+        date: "2022-2024",
+        title: "Presidente junta vecinal",
+        description:
+            "Durante este periodo fui el presidente de la junta vecinal. En la misma gestionamos temas relacionados a reclamos que tienen los vecinos, tratar de buscar soluciones, como tambien propuestas y la realizacion de diversas actividades.",
+    },
+];
+---
+
+<p class="opacity-80 text-wrap max-w-[700px]">
+    Por el momento no he obtenido experiencia (laboral) como desarrollador, por
+    lo cual dejo algunas de mis experiencias en otras areas.
+</p>
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3 mt-4">
+    {
+        EXPERIENCE.map((experiencie) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItems {...experiencie} />
+            </li>
+        ))
+    }
+</ol>
